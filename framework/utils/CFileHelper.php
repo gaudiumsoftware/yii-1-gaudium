@@ -363,7 +363,7 @@ class CFileHelper
 		$prevDir=dirname($dst);
 		if($recursive && !is_dir($dst) && !is_dir($prevDir))
 			self::createDirectory(dirname($dst),$mode,true);
-		$res=mkdir($dst, $mode);
+		$res=@mkdir($dst, $mode);
 		@chmod($dst,$mode);
 		return $res;
 	}

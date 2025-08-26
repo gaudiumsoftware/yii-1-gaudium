@@ -79,7 +79,7 @@ class CFileCache extends CCache
 			$this->cachePath=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'cache';
 		if(!is_dir($this->cachePath))
 		{
-			mkdir($this->cachePath,$this->cachePathMode,true);
+			@mkdir($this->cachePath,$this->cachePathMode,true);
 			chmod($this->cachePath,$this->cachePathMode);
 		}
 	}
